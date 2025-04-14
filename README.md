@@ -41,7 +41,27 @@ The network contains two parts the **encoder** and the **decoder**.
 ![Encoder Block](assets/encoder-block.png)
 
 - **Input embedding**: Converting a word into a vector representation.
-- **Positional encoding**: Vector that gives information based on the context and position of the word in the sentence. There are multiple ways of defining these positional embeddings.
+- **Positional encoding**: Vector that gives information based on the context and position of the word in the sentence. There are multiple ways of defining these positional embeddings. (Can be fixed or learned during training).
+- **Multi-Head Attention**
+- **Add & Norm and Feed-Forward**:
+  - **Add & Norm**: takes in a residual connection to the original word embeddings, adds it to the embedding from the multi-head attention, and then normalizes to mean 0 and variance 1.
+  - **Feed-Forward** also has a _Add & Norm_ block at its output.
+
+The whole multi-head attention and feed forward blocks are repeated $n$ times in the encoder block.
+
+### The Decoder blocks
+
+![Decoder Block](assets/decoder-block.png)
+
+The goal of the decoder is to produce some output.
+It has a new block: _Masked Multi-Head Attention_.
+
+#### Masked Multi-Head Attention
+
+This is a multi-head attention block where some values are masked. The probabilities of the masked values are nullified or not selected.
+
+$MaskedAttention(Q, K, V) = SoftMax(\frac{Q^T K + M}{\sqrt{d_k}})V$
+where $M$ is a mask matrix of zeros and $-\infty$.
 
 ## References
 
