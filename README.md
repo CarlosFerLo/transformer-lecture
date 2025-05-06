@@ -10,9 +10,11 @@ The weights folder contains training checkpoints of the model.
 
 ## Setup
 
-1. Set up your python environment, follow this [guide](https://www.hostinger.com/tutorials/how-to-create-a-python-virtual-environment?gad_campaignid=20592453563&gbraid=0AAAAADMy-hb6kX1z27btePaLrM3NdyqOz).
+1. **Clone the git repository**: Go to the folder you want the repo to be in and run `git clone https://github.com/CarlosFerLo/transformer-lecture.git`, then navigate into the `transformer-lecture` folder.
 
-2. Install the project dependencies by running: `pip install -r requirements.txt`
+2. **Setup the python environment**: Run the following commands on your console: `python3 -m venv .env`, then `source .env/bin/activate`
+
+3. **Install the project dependencies** by running: `pip install -r requirements.txt`
 
 And you are good to go!
 
